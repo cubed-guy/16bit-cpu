@@ -17,7 +17,7 @@ wire [0:15] w_stkAddr;
 wire        w_stkAddrSel;
 wire        w_stkWCtrl;
 wire        w_stkSCtrl;
-wire [0:3]  w_spCtrl; // [select, inc, dec,]
+wire [0:2]  w_spCtrl; // [select, inc, dec,]
 wire [0:15] w_spAddr;
 
 // General Registers
@@ -31,7 +31,7 @@ wire        w_TIn;
 wire [0:15] w_aluOut;
 wire [0:15] w_aluS;
 wire [0:15] w_aluT;
-wire [0:5]  w_aluOP;
+wire [0:4]  w_aluOP;
 wire        w_aluCarry;    // input to carry reg
 wire        w_currCarry;   // output of carry reg
 wire        w_carryWCtrl;  // write control signal to carry reg
@@ -39,7 +39,7 @@ wire        w_carryWCtrl;  // write control signal to carry reg
 // Other
 wire        w_cond;
 wire        w_instrTypeCtrl;
-wire [0:5]  w_instrOP;
+wire [0:4]  w_instrOP;
 wire [0:1]  w_jSelCtrl;  // selects which value gets to be jCondVal
 wire [0:15] w_jCondVal;  // value used to determine S and Z signals
 
@@ -71,7 +71,7 @@ wordmux4 flagMux(
 	.o_val(w_jCondVal)
 );
 
-(.i_condVal(w_jCondVal), )
+// (.i_condVal(w_jCondVal), )
 
 
 //* THE CONTROL UNIT *//
