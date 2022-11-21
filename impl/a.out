@@ -1,0 +1,38 @@
+#! /usr/bin/vvp
+:ivl_version "10.3 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "vhdl_sys";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0x55c31c63f0d0 .scope module, "programrom" "programrom" 2 1;
+ .timescale 0 0;
+    .port_info 0 /INPUT 16 "i_addr"
+    .port_info 1 /OUTPUT 18 "o_instr"
+L_0x55c31c694900 .functor BUFZ 18, L_0x55c31c694800, C4<000000000000000000>, C4<000000000000000000>, C4<000000000000000000>;
+v0x55c31c63f250_0 .net *"_s18", 17 0, L_0x55c31c694800;  1 drivers
+o0x7faff5da6048 .functor BUFZ 16, C4<zzzzzzzzzzzzzzzz>; HiZ drive
+v0x55c31c6843a0_0 .net "i_addr", 0 15, o0x7faff5da6048;  0 drivers
+v0x55c31c684480_0 .net "o_instr", 0 17, L_0x55c31c694900;  1 drivers
+L_0x7faff5d5d018 .functor BUFT 1, C4<000000000000111000>, C4<0>, C4<0>, C4<0>;
+v0x55c31c684540 .array "program", 6 0;
+v0x55c31c684540_0 .net v0x55c31c684540 0, 0 17, L_0x7faff5d5d018; 1 drivers
+L_0x7faff5d5d060 .functor BUFT 1, C4<110010100000000000>, C4<0>, C4<0>, C4<0>;
+v0x55c31c684540_1 .net v0x55c31c684540 1, 0 17, L_0x7faff5d5d060; 1 drivers
+L_0x7faff5d5d0a8 .functor BUFT 1, C4<110001000000000000>, C4<0>, C4<0>, C4<0>;
+v0x55c31c684540_2 .net v0x55c31c684540 2, 0 17, L_0x7faff5d5d0a8; 1 drivers
+L_0x7faff5d5d0f0 .functor BUFT 1, C4<000000000000011000>, C4<0>, C4<0>, C4<0>;
+v0x55c31c684540_3 .net v0x55c31c684540 3, 0 17, L_0x7faff5d5d0f0; 1 drivers
+L_0x7faff5d5d138 .functor BUFT 1, C4<101010010000000000>, C4<0>, C4<0>, C4<0>;
+v0x55c31c684540_4 .net v0x55c31c684540 4, 0 17, L_0x7faff5d5d138; 1 drivers
+L_0x7faff5d5d180 .functor BUFT 1, C4<110001000000000000>, C4<0>, C4<0>, C4<0>;
+v0x55c31c684540_5 .net v0x55c31c684540 5, 0 17, L_0x7faff5d5d180; 1 drivers
+o0x7faff5da61c8 .functor BUFZ 18, C4<zzzzzzzzzzzzzzzzzz>; HiZ drive
+v0x55c31c684540_6 .net v0x55c31c684540 6, 0 17, o0x7faff5da61c8; 0 drivers
+L_0x55c31c694800 .array/port v0x55c31c684540, o0x7faff5da6048;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "../meta/programrom.v";

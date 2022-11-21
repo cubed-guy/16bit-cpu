@@ -1,0 +1,44 @@
+registers.v:62: error: Unable to bind wire/reg/memory `clk' in `tb.c.stack'
+posedge clk
+cpu.v:53: warning: Port 1 (s) of alu74181 expects 4 bits, got 5.
+cpu.v:53:        : Pruning 1 high bits of the expression.
+increment.v:7: error: o_out is not a valid l-value in tb.c.ipIncrementer.
+increment.v:4:      : o_out is declared here as wire.
+increment.v:10: error: o_out is not a valid l-value in tb.c.ipIncrementer.
+increment.v:4:      : o_out is declared here as wire.
+cpu.v:54: warning: Port 1 (i_in) of incrementer expects 1 bits, got 16.
+cpu.v:54:        : Pruning 15 high bits of the expression.
+cpu.v:54: warning: Port 3 (o_out) of incrementer expects 1 bits, got 16.
+cpu.v:54:        : Padding 15 high bits of the expression.
+muxes.v:48: error: Wrong number of ports. Expecting 3, got 4.
+muxes.v:49: error: Wrong number of ports. Expecting 3, got 4.
+increment.v:7: error: o_out is not a valid l-value in tb.c.sp.inc.
+increment.v:4:      : o_out is declared here as wire.
+increment.v:10: error: o_out is not a valid l-value in tb.c.sp.inc.
+increment.v:4:      : o_out is declared here as wire.
+registers.v:44: warning: Port 1 (i_in) of incrementer expects 1 bits, got 16.
+registers.v:44:        : Pruning 15 high bits of the expression.
+registers.v:44: warning: Port 3 (o_out) of incrementer expects 1 bits, got 16.
+registers.v:44:        : Padding 15 high bits of the expression.
+cpu.v:60: warning: Port 6 (o_data) of wordreg expects 16 bits, got 1.
+cpu.v:60:        : Padding 15 high bits of the port.
+cpu.v:66: warning: Port 3 (i_val1) of wordmux expects 16 bits, got 1.
+cpu.v:66:        : Padding 15 high bits of the port.
+cpu.v:67: warning: Port 2 (i_val0) of wordmux expects 16 bits, got 17.
+cpu.v:67:        : Pruning 1 high bits of the expression.
+muxes.v:10: sorry: part selects straddling the start of signal (o_val['sd4]) are not currently supported.
+muxes.v:10: error: Output port expression must support continuous assignment.
+muxes.v:10:      : Port 4 (o_val) of mux is connected to o_val['sd4]
+cpu.v:68: warning: Port 2 (i_val0) of opmux expects 4 bits, got 5.
+cpu.v:68:        : Pruning 1 high bits of the expression.
+cpu.v:68: warning: Port 3 (i_val1) of opmux expects 4 bits, got 5.
+cpu.v:68:        : Pruning 1 high bits of the expression.
+cpu.v:68: warning: Port 4 (o_val) of opmux expects 4 bits, got 5.
+cpu.v:68:        : Padding 1 high bits of the expression.
+cpu.v:69: warning: Port 3 (i_val1) of wordmux4 expects 16 bits, got 1.
+cpu.v:69:        : Padding 15 high bits of the port.
+cpu.v:69: warning: Port 4 (i_val2) of wordmux4 expects 16 bits, got 1.
+cpu.v:69:        : Padding 15 high bits of the port.
+cpu.v:79: warning: Port 12 (o_jSelCtrl) of controlunit expects 1 bits, got 2.
+cpu.v:79:        : Padding 1 high bits of the expression.
+10 error(s) during elaboration.

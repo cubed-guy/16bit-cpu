@@ -1,6 +1,6 @@
 module alu74181(
     input [0:3]s,
-    input ci, M,
+    input M,
     input [0:15] a, b,
     output reg [0:15] y,
     output reg co
