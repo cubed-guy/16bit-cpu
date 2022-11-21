@@ -26,7 +26,7 @@ output   o_carryWCtrl;
 output [0:4] o_instrOP;
 output o_instrTypeCtrl;
 output o_jSelCtrl;
-output [0:5] o_JCtrl;
+output [0:5] o_jCtrl;
 
 assign o_TIn = (~i_instruction[0]) & (~i_instruction[1]);
 
