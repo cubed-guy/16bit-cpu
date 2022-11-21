@@ -41,7 +41,7 @@ wire shouldSet = i_ctrl[1] ^ i_ctrl[2];
 wire [0:15] tempInc;
 
 // dir = 1 if i_ctr[2] else 0
-incrementer inc(.i_in(o_topAddr), .i_dir(i_ctrl[2]), .o_out(tempInc))
+incrementer inc(.i_in(o_topAddr), .i_dir(i_ctrl[2]), .o_out(tempInc));
 
 wordreg top(.i_clock(i_clock), .bus(bus), .i_data(tempInc), .i_w(shouldSet), .i_s(i_ctrl[0]), .o_data(o_topAddr));
 
@@ -68,5 +68,5 @@ end
 
 wordmux m(.i_sel(i_s), .i_val0(memory[address]), .i_val1(16'bz), .o_val(bus));
 
-endmodule;
+endmodule
 

@@ -21,12 +21,12 @@ mux mux_bit6(.i_sel(i_sel), .i_val0(i_val0[6]), .i_val1(i_val1[6]), .o_val(o_val
 mux mux_bit7(.i_sel(i_sel), .i_val0(i_val0[7]), .i_val1(i_val1[7]), .o_val(o_val[7]));
 mux mux_bit8(.i_sel(i_sel), .i_val0(i_val0[8]), .i_val1(i_val1[8]), .o_val(o_val[8]));
 mux mux_bit9(.i_sel(i_sel), .i_val0(i_val0[9]), .i_val1(i_val1[9]), .o_val(o_val[9]));
-mux mux_bit10(.i_sel(i_sel), .i_val0(i_val0[10)], .i_val1(i_val1[10)], .o_val(o_val[10)]);
-mux mux_bit11(.i_sel(i_sel), .i_val0(i_val0[11)], .i_val1(i_val1[11)], .o_val(o_val[11)]);
-mux mux_bit12(.i_sel(i_sel), .i_val0(i_val0[12)], .i_val1(i_val1[12)], .o_val(o_val[12)]);
-mux mux_bit13(.i_sel(i_sel), .i_val0(i_val0[13)], .i_val1(i_val1[13)], .o_val(o_val[13)]);
-mux mux_bit14(.i_sel(i_sel), .i_val0(i_val0[14)], .i_val1(i_val1[14)], .o_val(o_val[14)]);
-mux mux_bit15(.i_sel(i_sel), .i_val0(i_val0[15)], .i_val1(i_val1[15)], .o_val(o_val[15)]);
+mux mux_bit10(.i_sel(i_sel), .i_val0(i_val0[10]), .i_val1(i_val1[10]), .o_val(o_val[10]));
+mux mux_bit11(.i_sel(i_sel), .i_val0(i_val0[11]), .i_val1(i_val1[11]), .o_val(o_val[11]));
+mux mux_bit12(.i_sel(i_sel), .i_val0(i_val0[12]), .i_val1(i_val1[12]), .o_val(o_val[12]));
+mux mux_bit13(.i_sel(i_sel), .i_val0(i_val0[13]), .i_val1(i_val1[13]), .o_val(o_val[13]));
+mux mux_bit14(.i_sel(i_sel), .i_val0(i_val0[14]), .i_val1(i_val1[14]), .o_val(o_val[14]));
+mux mux_bit15(.i_sel(i_sel), .i_val0(i_val0[15]), .i_val1(i_val1[15]), .o_val(o_val[15]));
 endmodule
 
 module wordmux4(input wire [0:1] i_sel, input wire [0:16] i_val0, i_val1, i_val2, i_val3, output wire [0:16] o_val);
