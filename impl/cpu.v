@@ -3,34 +3,34 @@ module cpu(input wire i_clock);
 
 //* WIRES *//
 
-wire [0:16] BUS;
+wire [0:15] BUS;
 
 // Instruction
-wire [0:16] w_instrAddr;
-wire [0:16] w_incInstrAddr;
-wire [0:18] w_progInstruction;
-wire [0:16] w_nextInstr;
+wire [0:15] w_instrAddr;
+wire [0:15] w_incInstrAddr;
+wire [0:17] w_progInstruction;
+wire [0:15] w_nextInstr;
 
 // Stack
 wire        w_IDX;
-wire [0:16] w_stkAddr;
+wire [0:15] w_stkAddr;
 wire        w_stkAddrSel;
 wire        w_stkWCtrl;
 wire        w_stkSCtrl;
 wire [0:3]  w_spCtrl; // [select, inc, dec,]
-wire [0:16] w_spAddr;
+wire [0:15] w_spAddr;
 
 // General Registers
 wire        w_RWCtrl;
 wire        w_RSCtrl;
 wire        w_TWCtrl;
-wire [0:16] w_TInData;
+wire [0:15] w_TInData;
 wire        w_TIn;
 
 // ALU and Carry
-wire [0:16] w_aluOut;
-wire [0:16] w_aluS;
-wire [0:16] w_aluT;
+wire [0:15] w_aluOut;
+wire [0:15] w_aluS;
+wire [0:15] w_aluT;
 wire [0:5]  w_aluOP;
 wire        w_aluCarry;    // input to carry reg
 wire        w_currCarry;   // output of carry reg
@@ -41,7 +41,7 @@ wire        w_cond;
 wire        w_instrTypeCtrl;
 wire [0:5]  w_instrOP;
 wire [0:1]  w_jSelCtrl;  // selects which value gets to be jCondVal
-wire [0:16] w_jCondVal;  // value used to determine S and Z signals
+wire [0:15] w_jCondVal;  // value used to determine S and Z signals
 
 
 //* CIRCUITS *//
