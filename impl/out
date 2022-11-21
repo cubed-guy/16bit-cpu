@@ -1,0 +1,67 @@
+muxes.v:6: syntax error
+muxes.v:6: error: Syntax error in instance port expression(s).
+muxes.v:6: error: Invalid module instantiation
+muxes.v:7: syntax error
+muxes.v:7: error: Syntax error in instance port expression(s).
+muxes.v:7: error: Invalid module instantiation
+muxes.v:8: syntax error
+muxes.v:8: error: Syntax error in instance port expression(s).
+muxes.v:8: error: Invalid module instantiation
+muxes.v:9: syntax error
+muxes.v:9: error: Syntax error in instance port expression(s).
+muxes.v:9: error: Invalid module instantiation
+muxes.v:10: syntax error
+muxes.v:10: error: Syntax error in instance port expression(s).
+muxes.v:10: error: Invalid module instantiation
+muxes.v:14: syntax error
+muxes.v:14: error: Syntax error in instance port expression(s).
+muxes.v:14: error: Invalid module instantiation
+muxes.v:15: syntax error
+muxes.v:15: error: Syntax error in instance port expression(s).
+muxes.v:15: error: Invalid module instantiation
+muxes.v:16: syntax error
+muxes.v:16: error: Syntax error in instance port expression(s).
+muxes.v:16: error: Invalid module instantiation
+muxes.v:17: syntax error
+muxes.v:17: error: Syntax error in instance port expression(s).
+muxes.v:17: error: Invalid module instantiation
+muxes.v:18: syntax error
+muxes.v:18: error: Syntax error in instance port expression(s).
+muxes.v:18: error: Invalid module instantiation
+muxes.v:19: syntax error
+muxes.v:19: error: Syntax error in instance port expression(s).
+muxes.v:19: error: Invalid module instantiation
+muxes.v:20: syntax error
+muxes.v:20: error: Syntax error in instance port expression(s).
+muxes.v:20: error: Invalid module instantiation
+muxes.v:21: syntax error
+muxes.v:21: error: Syntax error in instance port expression(s).
+muxes.v:21: error: Invalid module instantiation
+muxes.v:22: syntax error
+muxes.v:22: error: Syntax error in instance port expression(s).
+muxes.v:22: error: Invalid module instantiation
+muxes.v:23: syntax error
+muxes.v:23: error: Syntax error in instance port expression(s).
+muxes.v:23: error: Invalid module instantiation
+muxes.v:24: syntax error
+muxes.v:24: error: Syntax error in instance port expression(s).
+muxes.v:24: error: Invalid module instantiation
+muxes.v:25: syntax error
+muxes.v:25: error: Syntax error in instance port expression(s).
+muxes.v:25: error: Invalid module instantiation
+muxes.v:26: syntax error
+muxes.v:26: error: Syntax error in instance port expression(s).
+muxes.v:26: error: Invalid module instantiation
+muxes.v:27: syntax error
+muxes.v:27: error: Syntax error in instance port expression(s).
+muxes.v:27: error: Invalid module instantiation
+muxes.v:28: syntax error
+muxes.v:28: error: Syntax error in instance port expression(s).
+muxes.v:28: error: Invalid module instantiation
+muxes.v:29: syntax error
+muxes.v:29: error: Syntax error in instance port expression(s).
+muxes.v:29: error: Invalid module instantiation
+registers.v:46: syntax error
+registers.v:44: error: Invalid module instantiation
+registers.v:71: syntax error
+I give up.

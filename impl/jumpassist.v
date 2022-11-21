@@ -1,4 +1,7 @@
-module jumpassist(input wire i_carry, input wire [0:15] i_jCondVal, input wire [0:5] i_jCtrl, input wire, output wire o_cond);
+module jumpassist(input wire i_carry, 
+    input wire [0:15] i_jCondVal,
+    input wire [0:5] i_jCtrl, 
+    output wire o_cond);
 
 wire [0:2] w_SZC;
 
