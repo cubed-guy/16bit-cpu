@@ -35,3 +35,26 @@ wordmux mux1(.i_sel(i_sel[1]), i_val0, i_val1, w_0);
 wordmux mux2(.i_sel(i_sel[1]), i_val2, i_val3, w_1);
 wordmux mux3(.i_sel(i_sel[0]), w_0, w_1, o_val);
 endmodule
+
+module mux2 (input wire i0, i1, j, output wire o);
+    if(j==0):
+        assign o = i0;
+    else:
+        assign o = i1;
+endmodule
+
+module mux4 (input wire [0:3] i, input wire [0:1] j, output wire o);
+    wire  t0, t1;
+    mux2 mux2_0 (i[0], i[1], j[1], t0);
+    mux2 mux2_1 (i[2], i[3], j[1], t1);
+    mux2 mux2_2 (t0, t1, j[0], o);
+endmodule
+
+module mux8 (input wire [0:7] i, input wire [0:2] j, output wire o);
+    wire  t0, t1;
+    mux4 mux4_0 (i[0:3], j[2], j[1], t0);
+    mux4 mux4_1 (i[4:7], j[2], j[1], t1);
+    mux2 mux2_0 (t0, t1, j[0], o);
+endmodule
+ 
+
