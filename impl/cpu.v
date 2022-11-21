@@ -42,6 +42,9 @@ wire        w_instrTypeCtrl;
 wire [0:4]  w_instrOP;
 wire [0:1]  w_jSelCtrl;  // selects which value gets to be jCondVal
 wire [0:15] w_jCondVal;  // value used to determine S and Z signals
+wire [0:2]  w_SZC;
+wire [0:5]  w_jCtrl;  // value used to determine S and Z signals
+
 
 
 //* CIRCUITS *//
@@ -71,7 +74,8 @@ wordmux4 flagMux(
 	.o_val(w_jCondVal)
 );
 
-// (.i_condVal(w_jCondVal), )
+// TODO: generate SZC
+mux8 jMux(.i_sel(w_SZC), .i_val({2'b11, w_jCtrl}));
 
 
 //* THE CONTROL UNIT *//
