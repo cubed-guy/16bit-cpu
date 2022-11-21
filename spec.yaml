@@ -42,3 +42,40 @@ Jcc:  # the last 9 bits of non-DATA instructions
     S: Sign bit of selected operand
     Z: Whether the operand is zero or not
     C: Whether a carry was generated in the last OP instruction (independent of operand)
+
+
+74181 spec:
+  M S3 S2 S1 S0
+  0  0  0  0  0  A
+  0  0  0  0  1  A or B
+  0  0  0  1  0  A or not B
+  0  0  0  1  1  negative 1   [all ones]
+  0  0  1  0  0  A plus (A and not B)
+  0  0  1  0  1  (A or B) plus (A and not B)
+  0  0  1  1  0  A minus B minus 1
+  0  0  1  1  1  (A and not B) minus 1
+  0  1  0  0  0  A plus (A and B)
+  0  1  0  0  1  A plus B
+  0  1  0  1  0  (A or not B) plus (A and B)
+  0  1  0  1  1  (A and B) minus 1
+  0  1  1  0  0  A plus A
+  0  1  1  0  1  (A or B) plus A
+  0  1  1  1  0  (A or not B) plus A
+  0  1  1  1  1  A minus 1
+  1  0  0  0  0  not A
+  1  0  0  0  1  not A or not B
+  1  0  0  1  0  not A and B
+  1  0  0  1  1  0
+  1  0  1  0  0  not (A and B)
+  1  0  1  0  1  not B
+  1  0  1  1  0  A xor B
+  1  0  1  1  1  A and not B
+  1  1  0  0  0  not A or B
+  1  1  0  0  1  not (A xor B)
+  1  1  0  1  0  B
+  1  1  0  1  1  A and B
+  1  1  1  0  0  1
+  1  1  1  0  1  A or not B
+  1  1  1  1  0  A or B
+  1  1  1  1  1  A
+
