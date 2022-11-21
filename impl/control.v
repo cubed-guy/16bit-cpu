@@ -25,7 +25,7 @@ output   o_TIn;
 output   o_carryWCtrl;
 output [0:4] o_instrOP;
 output o_instrTypeCtrl;
-output o_jSelCtrl;
+output [0:1] o_jSelCtrl;
 output [0:5] o_jCtrl;
 
 assign o_TIn = (~i_instruction[0]) & (~i_instruction[1]);
@@ -44,9 +44,9 @@ assign o_RSCtrl = (~i_instruction[3]) & (~i_instruction[4]) & o_TIn;
 assign o_carryWCtrl = (i_instruction[2]) & o_TIn;
 
 assign o_instrTypeCtrl = o_carryWCtrl & o_TIn;
-assign o_instrOP = i_instruction[3:7] & o_TIn;
+assign o_instrOP = i_instruction[3:7];
 
-assign o_jSelCtrl = i_instruction[9:11] & o_TIn;
-assign o_jCtrl = i_instruction[12:17]  & o_TIn;
+assign o_jSelCtrl = i_instruction[9:11];
+assign o_jCtrl = i_instruction[12:17] & {o_TIn, o_TIn, o_TIn, o_TIn, o_TIn, o_TIn};
 
 endmodule

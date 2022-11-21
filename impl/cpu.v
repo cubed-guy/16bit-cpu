@@ -65,12 +65,12 @@ wordreg ip(.i_clock(i_clock), .bus(BUS), .i_data(w_nextInstr), .i_w(1'b1), .i_s(
 // Multiplexers
 wordmux IPMux(.i_sel(w_cond), .i_val0(w_incInstrAddr), .i_val1(w_aluT), .o_val(w_nextInstr));
 wordmux SPMux(.i_sel(w_stkAddrSel), .i_val0(w_spAddr), .i_val1(w_ROut), .o_val(w_TInData));
-wordmux TInMux(.i_sel(w_TIn), .i_val0(w_progInstruction[2:18]), .i_val1(BUS), .o_val(w_TInData)); // this is the only place outside CU where we permit subscipting the instr
+wordmux TInMux(.i_sel(w_TIn), .i_val0(w_progInstruction[2:17]), .i_val1(BUS), .o_val(w_TInData)); // this is the only place outside CU where we permit subscipting the instr
 opmux OPMux(.i_sel(w_instrTypeCtrl), .i_val0(w_instrOP), .i_val1(5'b00000), .o_val(w_aluOP));
 wordmux4 flagMux(
 	.i_sel(w_jSelCtrl),
-	.i_val0(w_aluOut), .i_val1(w_aluA),
-	.i_val2(w_ROut), .i_val3(w_aluS),
+	.i_val0(w_aluOut), .i_val1(w_ROut),
+	.i_val2(w_aluT), .i_val3(w_aluS),
 	.o_val(w_jCondVal)
 );
 
