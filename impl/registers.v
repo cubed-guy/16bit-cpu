@@ -30,3 +30,21 @@ end
 wordmux m(.i_sel(i_s), .i_val1(o_data), .i_val0(16'bz), .o_val(bus));
 
 endmodule
+
+module stackpointer (i_clock, bus, i_ctrl, o_topAddr);
+input i_clock;
+inout [0:15] bus;
+input [0:2] i_ctrl;
+output [0:15] o_topAddr;
+
+wire shouldSet = i_ctrl[1] ^ i_ctrl[2];
+wire [0:15] tempInc;
+
+// dir = 1 if i_ctr[2] else 0
+incrementer inc(.i_in(o_topAddr), .i_dir(i_ctrl[2]), .o_out(tempInc))
+
+wordreg top(.i_clock(i_clock), .bus(bus), .i_data(tempInc), .i_w(shouldSet), .i_s(i_ctrl[0]), .o_data(o_topAddr));
+
+endmodule
+
+
