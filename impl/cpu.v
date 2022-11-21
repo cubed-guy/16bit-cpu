@@ -86,8 +86,10 @@ controlunit the_controlunit(
     .o_RSCtrl(w_RSCtrl),
     .o_TIn(w_TIn),
     .o_carryWCtrl(w_carryWCtrl),
+    .o_instrTypeCtrl(w_instrTypeCtrl),
     .o_instrOP(w_instrOP),
-    .o_jCtrl(w_jCtrl)
+    .o_jSelCtrl(w_jSelCtrl),
+    .o_jCtrl(w_jCtrl),
 );
 
 endmodule
