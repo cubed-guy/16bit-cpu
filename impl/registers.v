@@ -59,7 +59,7 @@ output reg [0:15] o_top;
 
 reg [0:15] memory [0:65535];
 
-always @(posedge clk) begin
+always @(posedge i_clock) begin
     if (i_w) 
         memory[i_addr] <= bus;
     

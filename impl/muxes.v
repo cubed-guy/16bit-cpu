@@ -45,7 +45,7 @@ endmodule
 
 module mux8 (input wire [0:2] i_sel, input wire [0:7] i_val, output wire o_val);
     wire w_0, w_1;
-    mux4 mux4_0 (i_sel[1], i_sel[2], i_val[0:3], w_0);
-    mux4 mux4_1 (i_sel[1], i_sel[2], i_val[4:7], w_1);
+    mux4 mux4_0 (i_sel[0:1], i_val[0:3], w_0);
+    mux4 mux4_1 (i_sel[0:1], i_val[4:7], w_1);
     mux  mux2_2 (i_sel[0], w_0, w_1, o_val);
 endmodule
