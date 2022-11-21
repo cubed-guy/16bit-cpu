@@ -55,18 +55,18 @@ inout [0:15] bus;
 input [0:15] i_addr;
 input i_w;
 input i_s;
-output [0:7] o_top;
+output reg [0:7] o_top;
 
 reg [0:15] memory [0:65535];
 
 always @(posedge clk) begin
     if (i_w) 
-        memory[address] <= data_in;
+        memory[i_addr] <= bus;
     
-    o_top <= memory[address];
+    o_top <= memory[i_addr];
 end
 
-wordmux m(.i_sel(i_s), .i_val0(memory[address]), .i_val1(16'bz), .o_val(bus));
+wordmux m(.i_sel(i_s), .i_val0(memory[i_addr]), .i_val1(16'bz), .o_val(bus));
 
 endmodule
 

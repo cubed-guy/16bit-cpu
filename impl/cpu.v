@@ -47,7 +47,7 @@ wire [0:5]  w_jCtrl;     // from the CU to the 6:1 mux
 
 //* CIRCUITS *//
 
-programrom rom(.i_addr(w_instrAddr), .o_data(w_progInstruction));
+programrom rom(.i_addr(w_instrAddr), .o_instr(w_progInstruction));
 memorystack stack(.i_clock(i_clock), .bus(BUS), .i_addr(w_stkAddr), .i_w(w_stkWCtrl), .i_s(w_stkSCtrl), .o_top(w_aluS));
 
 alu74181 alu(.i_T(w_aluT), .i_S(w_aluS), .i_OP(w_aluOP), .o_result(w_aluOut), .o_carry(w_aluCarry));
