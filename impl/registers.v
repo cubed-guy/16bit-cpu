@@ -48,3 +48,25 @@ wordreg top(.i_clock(i_clock), .bus(bus), .i_data(tempInc), .i_w(shouldSet), .i_
 endmodule
 
 
+module memorystack (i_clock, bus, i_addr, i_w, i_s, o_top);
+
+input i_clock;
+inout [0:15] bus;
+input [0:15] i_addr;
+input i_w;
+input i_s;
+output [0:7] o_top;
+
+reg [0:15] memory [0:65535];
+
+always @(posedge clk) begin
+    if (i_w) 
+        memory[address] <= data_in;
+    
+    o_top <= memory[address];
+end
+
+wordmux m(.i_sel(i_s), .i_val0(memory[address]), .i_val1(16'bz), .o_val(bus));
+
+endmodule;
+
