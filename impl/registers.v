@@ -55,7 +55,7 @@ inout [0:15] bus;
 input [0:15] i_addr;
 input i_w;
 input i_s;
-output reg [0:7] o_top;
+output reg [0:15] o_top;
 
 reg [0:15] memory [0:65535];
 
