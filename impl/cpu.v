@@ -78,7 +78,15 @@ wordmux4 flagMux(
 
 controlunit the_controlunit(
 	.i_instruction(w_progInstruction),
-	// TODO: connect to all control wires
+    .o_stkAddrSel(w_stkAddrSel),
+    .o_stkWCtrl(w_stkWCtrl),
+    .o_stkSCtrl(w_stkSCtrl),
+    .o_spCtrl(w_spCtrl),
+    .o_RWCtrl(w_RWCtrl),
+    .o_RSCtrl(w_RSCtrl),
+    .o_TIn(w_TIn),
+    .o_carryWCtrl(w_carryWCtrl),
+    .o_instrOP(w_instrOP),
 );
 
 endmodule
