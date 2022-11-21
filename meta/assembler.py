@@ -76,11 +76,13 @@ for line_no, line in enumerate(infile):
 		val = (src<<3)|dests[0]|dests[1]|dests[2]
 		itype = 0
 
-	split = jump.split()
-	jsrc = jsources[split[1]]
-	if split[1].startswith('0x'): jval = int(split[1], 16)
-	else: jval = int(split[1])
-	jval &= 63
+	if not jump: jval = 0; jsrc = 0
+	else:
+		split = jump.split()
+		jsrc = jsources[split[1]]
+		if split[1].startswith('0x'): jval = int(split[1], 16)
+		else: jval = int(split[1])
+		jval &= 63
 
 	output(f"assign program[{inst_no}] = 18b'{sp:02b}{itype}{val:05b}{idx}{jsrc:03b}{jval:06b}")
 
