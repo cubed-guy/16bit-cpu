@@ -56,8 +56,8 @@ incrementer ipIncrementer(.i_in(w_instrAddr), .i_dir(1'b1), .o_out(w_incInstrAdd
 stackpointer sp(.i_clock(i_clock), .bus(BUS), .i_ctrl(w_spCtrl), .o_topAddr(w_spAddr));
 bitreg  carryFlag(.i_clock(i_clock), .i_data(w_aluCarry), .i_w(w_carryWCtrl), .o_data(w_currCarry));
 wordreg registerR(.i_clock(i_clock), .bus(BUS), .i_data(w_aluOut), .i_w(w_RWCtrl), .i_s(w_RSCtrl), .o_data(w_ROut));
-wordreg registerT(.i_clock(i_clock), .bus(BUS), .i_data(w_TInData), .i_w(w_TWCtrl), .i_s(0'b1), .o_data(w_aluT));
-wordreg ip(.i_clock(i_clock), .bus(BUS), .i_data(w_nextInstr), .i_w(1'b1), .i_s(0'b1), .o_data(w_instrAddr));
+wordreg registerT(.i_clock(i_clock), .bus(BUS), .i_data(w_TInData), .i_w(w_TWCtrl), .i_s(1'b0), .o_data(w_aluT));
+wordreg ip(.i_clock(i_clock), .bus(BUS), .i_data(w_nextInstr), .i_w(1'b1), .i_s(1'b0), .o_data(w_instrAddr));
 
 // Multiplexers
 wordmux IPMux(.i_sel(w_cond), .i_val0(w_incInstrAddr), .i_val1(w_aluT), .o_val(w_nextInstr));
@@ -71,12 +71,13 @@ wordmux4 flagMux(
 	.o_val(w_jCondVal)
 );
 
+(.i_condVal(w_jCondVal), )
+
 
 //* THE CONTROL UNIT *//
 
 controlunit the_controlunit(
 	.i_instruction(w_progInstruction),
-	.i_condVal(w_jCondVal)
 	// TODO: connect to all control wires
 );
 
