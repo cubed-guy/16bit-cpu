@@ -36,7 +36,7 @@ for line_no, line in enumerate(infile):
 print('Completed pass 1')
 infile.seek(0)
 
-output(f'''module programrom(input i_addr [0:15], output [0:17] o_instr);
+output(f'''module programrom(input [0:15] i_addr, output [0:17] o_instr);
 wire [0:17] program [0:{inst_no}];
 ''')
 
@@ -98,4 +98,5 @@ for line_no, line in enumerate(infile):
 
 print(f'Completed pass 2: Read {line_no} lines')
 
+output('assign o_instr = program[i_addr];')
 output('endmodule')

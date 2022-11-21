@@ -1,2 +1,3 @@
 *.sublime-*
 ./impl/out
+./impl/a.out
