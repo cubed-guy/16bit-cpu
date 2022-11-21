@@ -1,0 +1,44 @@
+DATA: 00 xxxx xxxx xxxx xxxx  # set T to last 16 bits
+
+MV+:  01 0 xx xxx 0 xxx xxxxxx  # select a source (among R, SP and stack top) and write the value to specified destinations (among T, R, stack top), then jump if minterms set and increment stack pointer
+MVI+: 01 0 xx xxx 1 xxx xxxxxx  # select a source (among R, SP and R location of stack) and write the value to specified destinations (among T, R location of stack), then jump if minterms set and increment stack pointer
+OP+:  01 1 xxxxx  0 xxx xxxxxx  # set R to the result of operation between T and the top of the stack, then jump if minterms set and increment stack pointer
+OPI+: 01 1 xxxxx  1 xxx xxxxxx  # perform operation between T and value at location R of the stack, then jump if minterms set and increment stack pointer
+
+MV-:  10 0 xx xxx 0 xxx xxxxxx  # select a source (among R, SP and stack top) and write the value to specified destinations (among T, R, stack top), then jump if minterms set and decrement stack pointer
+MVI-: 10 0 xx xxx 1 xxx xxxxxx  # select a source (among R, SP and R location of stack) and write the value to specified destinations (among T, R location of stack), then jump if minterms set and decrement stack pointer
+OP-:  10 1 xxxxx  0 xxx xxxxxx  # set R to the result of operation between T and the top of the stack, then jump if minterms set and decrement stack pointer
+OPI-: 10 1 xxxxx  1 xxx xxxxxx  # perform operation between T and value at location R of the stack, then jump if minterms set and decrement stack pointer
+
+MV:   11 0 xx xxx 0 xxx xxxxxx  # select a source (among R, SP and stack top) and write the value to specified destinations (among T, R, stack top), then jump if minterms set
+MVI:  11 0 xx xxx 1 xxx xxxxxx  # select a source (among R, SP and R location of stack) and write the value to specified destinations (among T, R location of stack), then jump if minterms set
+OP:   11 1 xxxxx  0 xxx xxxxxx  # set R to the result of operation between T and the top of the stack, then jump if minterms set
+OPI:  11 1 xxxxx  1 xxx xxxxxx  # perform operation between T and value at location R of the stack, then jump if minterms set
+
+
+MV:
+  xx
+    0: Select R to be written from (cannot be written to when selected)
+    1: Select SP to be written from
+    2: Select stack to be written from (cannot be written to when selected)
+    3: Unused for now
+  xxx
+    LSB: Write to T
+    2SB: Write to R (cannot be written to for MVI and OPI instructions)
+    MSB: Write to stack (top of the stack for MV, memory at address in R for MVI)
+
+Jcc:  # the last 9 bits of non-DATA instructions
+  xxx
+    0: Jump based on properties of ALU output
+    1: Jump based on properties of R
+    2: Jump based on properties of T
+    3: Jump based on properties of stack (top of the stack for MV and OP instructions, value at address R for MVI and OPI instructions)
+    4: [Redundant] Jump based on properties of ALU output
+    5: [Redundant] Jump based on properties of R
+    6: [Redundant] Jump based on properties of T
+    7: [Redundant] Jump based on properties of stack (top of the stack for MV and OP instructions, value at address R for MVI and OPI instructions)
+  
+  xxxxxx - these bits represent 6 minterms of SZC properties of operand
+    S: Sign bit of selected operand
+    Z: Whether the operand is zero or not
+    C: Whether a carry was generated in the last OP instruction (independent of operand)
