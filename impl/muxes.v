@@ -28,3 +28,10 @@ mux mux_bit13(.i_sel(i_sel), .i_val0(i_val0)[13], .i_val1(i_val1)[13], .o_val(o_
 mux mux_bit14(.i_sel(i_sel), .i_val0(i_val0)[14], .i_val1(i_val1)[14], .o_val(o_val)[14]);
 mux mux_bit15(.i_sel(i_sel), .i_val0(i_val0)[15], .i_val1(i_val1)[15], .o_val(o_val)[15]);
 endmodule
+
+module wordmux4(input wire [0:1] i_sel, input wire [0:16] i_val0, i_val1, i_val2, i_val3, output wire [0:16] o_val);
+wire [0:16] w_0, w_1;
+wordmux mux1(.i_sel(i_sel[1]), i_val0, i_val1, w_0);
+wordmux mux2(.i_sel(i_sel[1]), i_val2, i_val3, w_1);
+wordmux mux3(.i_sel(i_sel[0]), w_0, w_1, o_val);
+endmodule
