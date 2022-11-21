@@ -42,9 +42,7 @@ wire        w_instrTypeCtrl;
 wire [0:4]  w_instrOP;
 wire [0:1]  w_jSelCtrl;  // selects which value gets to be jCondVal
 wire [0:15] w_jCondVal;  // value used to determine S and Z signals
-wire [0:2]  w_SZC;
-wire [0:5]  w_jCtrl;  // value used to determine S and Z signals
-
+wire [0:5]  w_jCtrl;     // from the CU to the 6:1 mux
 
 
 //* CIRCUITS *//
@@ -54,6 +52,7 @@ memorystack stack(.i_clock(i_clock), .bus(BUS), .i_addr(w_stkAddr), .i_w(w_stkWC
 
 alu74181 alu(.i_T(w_aluT), .i_S(w_aluS), .i_OP(w_aluOP), .o_result(w_aluOut), .o_carry(w_aluCarry));
 incrementer ipIncrementer(.i_in(w_instrAddr), .i_dir(1'b1), .o_out(w_incInstrAddr));
+jumpassist the_jumpassist(.i_carry(w_currCarry), .i_jCondVal(w_jCondVal), .i_jCtrl(w_jCtrl), .o_cond(w_jCond));
 
 // Registers
 stackpointer sp(.i_clock(i_clock), .bus(BUS), .i_ctrl(w_spCtrl), .o_topAddr(w_spAddr));
@@ -65,7 +64,7 @@ wordreg ip(.i_clock(i_clock), .bus(BUS), .i_data(w_nextInstr), .i_w(1'b1), .i_s(
 // Multiplexers
 wordmux IPMux(.i_sel(w_cond), .i_va:l0(w_incInstrAddr), .i_val1(w_aluT), .o_val(w_nextInstr));
 wordmux SPMux(.i_sel(w_stkAddrSel), .i_val0(w_spAddr), .i_val1(w_ROut), .o_val(w_TInData));
-wordmux TInMux(.i_sel(w_TIn), .i_val0(BUS), .i_val1(w_progInstruction[2:18]), .o_val(w_TInData)); // this is the only place outside CU where we permit subscipting the instr
+wordmux TInMux(.i_sel(w_TIn), .i_val0(w_progInstruction[2:18]), .i_val1(BUS), .o_val(w_TInData)); // this is the only place outside CU where we permit subscipting the instr
 opmux OPMux(.i_sel(w_instrTypeCtrl), .i_val0(w_instrOP), .i_val1(5'b00000), .o_val(w_aluOP));
 wordmux4 flagMux(
 	.i_sel(w_jSelCtrl),
@@ -73,9 +72,6 @@ wordmux4 flagMux(
 	.i_val2(w_ROut), .i_val3(w_aluS),
 	.o_val(w_jCondVal)
 );
-
-// TODO: generate SZC
-mux8 jMux(.i_sel(w_SZC), .i_val({2'b11, w_jCtrl}));
 
 
 //* THE CONTROL UNIT *//
