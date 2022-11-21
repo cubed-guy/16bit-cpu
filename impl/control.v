@@ -47,6 +47,6 @@ assign o_instrTypeCtrl = o_carryWCtrl & o_TIn;
 assign o_instrOP = i_instruction[3:7] & o_TIn;
 
 assign o_jSelCtrl = i_instruction[9:11] & o_TIn;
-assign o_jCtrl = i_instruction[12:17] ] & o_TIn;
+assign o_jCtrl = i_instruction[12:17]  & o_TIn;
 
 endmodule
