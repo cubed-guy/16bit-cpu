@@ -1,5 +1,5 @@
 infile = open('test.asm')
-ofile = open('programcounter.v', 'w')
+ofile = open('programrom.v', 'w')
 
 def output(*args, **kwargs):
 	print(*args, file = ofile, **kwargs)
@@ -10,6 +10,7 @@ sources = {
 	'SP': 2,
 }
 dest_options = {
+	'BLANK': 0,
 	'T': 1,
 	'R': 2,
 	'Stack': 4,
@@ -26,22 +27,23 @@ labels = {}
 inst_no = 0
 for line_no, line in enumerate(infile):
 	line, *_ = line.partition(';')  # comment support
-	label, _, stmt = line.partition(':')  # label support
+	label, _, stmt = line.rpartition(':')  # label support
 
 	if label: labels[label] = inst_no
 	if not stmt: continue
 	inst_no += 1
 
+print('Completed pass 1')
 infile.seek(0)
 
-output('''module programcounter(input i_addr [0:15], output [0:17] o_instr);
-wire [0:17] program [0:65535];
+output(f'''module programrom(input i_addr [0:15], output [0:17] o_instr);
+wire [0:17] program [0:{inst_no}];
 ''')
 
 inst_no = 0
 for line_no, line in enumerate(infile):
 	line, *_ = line.partition(';')  # comment support
-	label, _, stmt = line.partition(':')  # label support
+	label, _, stmt = line.rpartition(':')  # label support
 
 	if not stmt: continue
 
@@ -53,6 +55,8 @@ for line_no, line in enumerate(infile):
 		else: val = int(split[1])
 		val &= 65535  # DT should not leak into MV and OP
 		output(f"assign program[{inst_no}] = 18'b{val:018b};")
+		inst_no += 1
+		continue
 
 	inst, _, jump = stmt.partition(',')
 	split = inst.split()
@@ -72,9 +76,13 @@ for line_no, line in enumerate(infile):
 
 	elif split[0] == 'MV':
 		src = sources[split[1]]
-		dests = [dest_options[dest] for dest in [*split, 0, 0, 0][2:5]]
+		dests = [dest_options[dest] for dest in [*split, 'BLANK', 'BLANK', 'BLANK'][2:5]]
 		val = (src<<3)|dests[0]|dests[1]|dests[2]
 		itype = 0
+	else:
+		print('Syntax error:')
+		print(' ', line)
+		quit(1)
 
 	if not jump: jval = 0; jsrc = 0
 	else:
@@ -84,8 +92,10 @@ for line_no, line in enumerate(infile):
 		else: jval = int(split[1])
 		jval &= 63
 
-	output(f"assign program[{inst_no}] = 18b'{sp:02b}{itype}{val:05b}{idx}{jsrc:03b}{jval:06b}")
+	output(f"assign program[{inst_no}] = 18'b{sp:02b}{itype}{val:05b}{idx}{jsrc:03b}{jval:06b};")
 
 	inst_no += 1
+
+print(f'Completed pass 2: Read {line_no} lines')
 
 output('endmodule')
