@@ -63,7 +63,7 @@ wordreg registerT(.i_clock(i_clock), .bus(BUS), .i_data(w_TInData), .i_w(w_TWCtr
 wordreg ip(.i_clock(i_clock), .bus(BUS), .i_data(w_nextInstr), .i_w(1'b1), .i_s(1'b0), .o_data(w_instrAddr));
 
 // Multiplexers
-wordmux IPMux(.i_sel(w_cond), .i_val0(w_incInstrAddr), .i_val1(w_aluT), .o_val(w_nextInstr));
+wordmux IPMux(.i_sel(w_cond), .i_va:l0(w_incInstrAddr), .i_val1(w_aluT), .o_val(w_nextInstr));
 wordmux SPMux(.i_sel(w_stkAddrSel), .i_val0(w_spAddr), .i_val1(w_ROut), .o_val(w_TInData));
 wordmux TInMux(.i_sel(w_TIn), .i_val0(BUS), .i_val1(w_progInstruction[2:18]), .o_val(w_TInData)); // this is the only place outside CU where we permit subscipting the instr
 opmux OPMux(.i_sel(w_instrTypeCtrl), .i_val0(w_instrOP), .i_val1(5'b00000), .o_val(w_aluOP));
@@ -91,6 +91,7 @@ controlunit the_controlunit(
     .o_TIn(w_TIn),
     .o_carryWCtrl(w_carryWCtrl),
     .o_instrOP(w_instrOP),
+    .o_jCtrl(w_jCtrl)
 );
 
 endmodule
