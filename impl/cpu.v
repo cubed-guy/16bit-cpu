@@ -51,7 +51,7 @@ wire [0:5]  w_jCtrl;     // from the CU to the 6:1 mux
 programrom rom(.i_addr(w_instrAddr), .o_instr(w_progInstruction));
 memorystack stack(.i_clock(i_clock), .bus(BUS), .i_addr(w_stkAddr), .i_w(w_stkWCtrl), .i_s(w_stkSCtrl), .o_top(w_aluS));
 
-alu74181 alu(.a(w_aluT), .b(w_aluS), .s(w_aluOP[0:3]), .M(w_aluOP[4]), .y(w_aluOut), .co(w_aluCarry));
+alu74181 alu(.a(w_aluT), .b(w_aluS), .s(w_aluOP[1:4]), .M(w_aluOP[0]), .y(w_aluOut), .co(w_aluCarry));
 incrementer ipIncrementer(.i_in(w_instrAddr), .i_dir(1'b1), .o_out(w_incInstrAddr));
 jumpassist the_jumpassist(.i_carry(w_currCarry), .i_jCondVal(w_jCondVal), .i_jCtrl(w_jCtrl), .o_cond(w_cond));
 
@@ -66,7 +66,7 @@ wordreg ip(.i_clock(i_clock), .bus(BUS), .i_data(w_nextInstr), .i_w(1'b1), .i_s(
 wordmux IPMux(.i_sel(w_cond), .i_val0(w_incInstrAddr), .i_val1(w_aluT), .o_val(w_nextInstr));
 wordmux SPMux(.i_sel(w_stkAddrSel), .i_val0(w_spAddr), .i_val1(w_ROut), .o_val(w_stkAddr));
 wordmux TInMux(.i_sel(w_TIn), .i_val0(BUS), .i_val1(w_progInstruction[2:17]), .o_val(w_TInData)); // this is the only place outside CU where we permit subscipting the instr
-opmux OPMux(.i_sel(w_instrTypeCtrl), .i_val0(w_instrOP), .i_val1(5'b00000), .o_val(w_aluOP));
+opmux OPMux(.i_sel(w_instrTypeCtrl), .i_val0(5'b0), .i_val1(w_instrOP), .o_val(w_aluOP));
 wordmux4 flagMux(
     .i_sel(w_jSelCtrl),
     .i_val0(w_aluOut), .i_val1(w_ROut),

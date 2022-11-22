@@ -1,5 +1,5 @@
 $date
-	Tue Nov 22 08:12:05 2022
+	Tue Nov 22 09:01:56 2022
 $end
 $version
 	Icarus Verilog
@@ -12,31 +12,31 @@ $var reg 1 ! clock $end
 $scope module c $end
 $var wire 16 " BUS [0:15] $end
 $var wire 1 ! i_clock $end
-$var wire 16 # w_TInData [0:15] $end
-$var wire 1 $ w_TWCtrl $end
-$var wire 16 % w_stkAddr [0:15] $end
-$var wire 1 & w_stkWCtrl $end
-$var wire 1 ' w_stkSCtrl $end
-$var wire 1 ( w_stkAddrSel $end
-$var wire 3 ) w_spCtrl [0:2] $end
-$var wire 16 * w_spAddr [0:15] $end
-$var wire 18 + w_progInstruction [0:17] $end
-$var wire 16 , w_nextInstr [0:15] $end
-$var wire 2 - w_jSelCtrl [0:1] $end
-$var wire 6 . w_jCtrl [0:5] $end
-$var wire 16 / w_jCondVal [0:15] $end
-$var wire 1 0 w_instrTypeCtrl $end
-$var wire 5 1 w_instrOP [0:4] $end
-$var wire 16 2 w_instrAddr [0:15] $end
-$var wire 16 3 w_incInstrAddr [0:15] $end
-$var wire 1 4 w_currCarry $end
-$var wire 1 5 w_cond $end
-$var wire 1 6 w_carryWCtrl $end
-$var wire 16 7 w_aluT [0:15] $end
-$var wire 16 8 w_aluS [0:15] $end
-$var wire 16 9 w_aluOut [0:15] $end
-$var wire 5 : w_aluOP [0:4] $end
-$var wire 1 ; w_aluCarry $end
+$var wire 1 # w_stkWCtrl $end
+$var wire 1 $ w_stkSCtrl $end
+$var wire 1 % w_stkAddrSel $end
+$var wire 16 & w_stkAddr [0:15] $end
+$var wire 3 ' w_spCtrl [0:2] $end
+$var wire 16 ( w_spAddr [0:15] $end
+$var wire 18 ) w_progInstruction [0:17] $end
+$var wire 16 * w_nextInstr [0:15] $end
+$var wire 2 + w_jSelCtrl [0:1] $end
+$var wire 6 , w_jCtrl [0:5] $end
+$var wire 16 - w_jCondVal [0:15] $end
+$var wire 1 . w_instrTypeCtrl $end
+$var wire 5 / w_instrOP [0:4] $end
+$var wire 16 0 w_instrAddr [0:15] $end
+$var wire 16 1 w_incInstrAddr [0:15] $end
+$var wire 1 2 w_currCarry $end
+$var wire 1 3 w_cond $end
+$var wire 1 4 w_carryWCtrl $end
+$var wire 16 5 w_aluT [0:15] $end
+$var wire 16 6 w_aluS [0:15] $end
+$var wire 16 7 w_aluOut [0:15] $end
+$var wire 5 8 w_aluOP [0:4] $end
+$var wire 1 9 w_aluCarry $end
+$var wire 1 : w_TWCtrl $end
+$var wire 16 ; w_TInData [0:15] $end
 $var wire 1 < w_TIn $end
 $var wire 1 = w_RWCtrl $end
 $var wire 1 > w_RSCtrl $end
@@ -45,240 +45,240 @@ $scope module IPMux $end
 $var wire 16 @ o_val [0:15] $end
 $var wire 16 A i_val1 [0:15] $end
 $var wire 16 B i_val0 [0:15] $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $scope module mux_bit0 $end
 $var wire 1 C i_val0 $end
 $var wire 1 D i_val1 $end
 $var wire 1 E o_val $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $upscope $end
 $scope module mux_bit1 $end
 $var wire 1 F i_val0 $end
 $var wire 1 G i_val1 $end
 $var wire 1 H o_val $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $upscope $end
 $scope module mux_bit10 $end
 $var wire 1 I i_val0 $end
 $var wire 1 J i_val1 $end
 $var wire 1 K o_val $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $upscope $end
 $scope module mux_bit11 $end
 $var wire 1 L i_val0 $end
 $var wire 1 M i_val1 $end
 $var wire 1 N o_val $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $upscope $end
 $scope module mux_bit12 $end
 $var wire 1 O i_val0 $end
 $var wire 1 P i_val1 $end
 $var wire 1 Q o_val $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $upscope $end
 $scope module mux_bit13 $end
 $var wire 1 R i_val0 $end
 $var wire 1 S i_val1 $end
 $var wire 1 T o_val $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $upscope $end
 $scope module mux_bit14 $end
 $var wire 1 U i_val0 $end
 $var wire 1 V i_val1 $end
 $var wire 1 W o_val $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $upscope $end
 $scope module mux_bit15 $end
 $var wire 1 X i_val0 $end
 $var wire 1 Y i_val1 $end
 $var wire 1 Z o_val $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $upscope $end
 $scope module mux_bit2 $end
 $var wire 1 [ i_val0 $end
 $var wire 1 \ i_val1 $end
 $var wire 1 ] o_val $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $upscope $end
 $scope module mux_bit3 $end
 $var wire 1 ^ i_val0 $end
 $var wire 1 _ i_val1 $end
 $var wire 1 ` o_val $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $upscope $end
 $scope module mux_bit4 $end
 $var wire 1 a i_val0 $end
 $var wire 1 b i_val1 $end
 $var wire 1 c o_val $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $upscope $end
 $scope module mux_bit5 $end
 $var wire 1 d i_val0 $end
 $var wire 1 e i_val1 $end
 $var wire 1 f o_val $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $upscope $end
 $scope module mux_bit6 $end
 $var wire 1 g i_val0 $end
 $var wire 1 h i_val1 $end
 $var wire 1 i o_val $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $upscope $end
 $scope module mux_bit7 $end
 $var wire 1 j i_val0 $end
 $var wire 1 k i_val1 $end
 $var wire 1 l o_val $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $upscope $end
 $scope module mux_bit8 $end
 $var wire 1 m i_val0 $end
 $var wire 1 n i_val1 $end
 $var wire 1 o o_val $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $upscope $end
 $scope module mux_bit9 $end
 $var wire 1 p i_val0 $end
 $var wire 1 q i_val1 $end
 $var wire 1 r o_val $end
-$var wire 1 5 i_sel $end
+$var wire 1 3 i_sel $end
 $upscope $end
 $upscope $end
 $scope module OPMux $end
 $var wire 5 s i_val1 [0:4] $end
 $var wire 5 t o_val [0:4] $end
 $var wire 5 u i_val0 [0:4] $end
-$var wire 1 0 i_sel $end
+$var wire 1 . i_sel $end
 $scope module mux_bit0 $end
 $var wire 1 v i_val0 $end
 $var wire 1 w i_val1 $end
 $var wire 1 x o_val $end
-$var wire 1 0 i_sel $end
+$var wire 1 . i_sel $end
 $upscope $end
 $scope module mux_bit1 $end
 $var wire 1 y i_val0 $end
 $var wire 1 z i_val1 $end
 $var wire 1 { o_val $end
-$var wire 1 0 i_sel $end
+$var wire 1 . i_sel $end
 $upscope $end
 $scope module mux_bit2 $end
 $var wire 1 | i_val0 $end
 $var wire 1 } i_val1 $end
 $var wire 1 ~ o_val $end
-$var wire 1 0 i_sel $end
+$var wire 1 . i_sel $end
 $upscope $end
 $scope module mux_bit3 $end
 $var wire 1 !" i_val0 $end
 $var wire 1 "" i_val1 $end
 $var wire 1 #" o_val $end
-$var wire 1 0 i_sel $end
+$var wire 1 . i_sel $end
 $upscope $end
 $scope module mux_bit4 $end
 $var wire 1 $" i_val0 $end
 $var wire 1 %" i_val1 $end
 $var wire 1 &" o_val $end
-$var wire 1 0 i_sel $end
+$var wire 1 . i_sel $end
 $upscope $end
 $upscope $end
 $scope module SPMux $end
 $var wire 16 '" o_val [0:15] $end
 $var wire 16 (" i_val1 [0:15] $end
 $var wire 16 )" i_val0 [0:15] $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $scope module mux_bit0 $end
 $var wire 1 *" i_val0 $end
 $var wire 1 +" i_val1 $end
 $var wire 1 ," o_val $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $upscope $end
 $scope module mux_bit1 $end
 $var wire 1 -" i_val0 $end
 $var wire 1 ." i_val1 $end
 $var wire 1 /" o_val $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $upscope $end
 $scope module mux_bit10 $end
 $var wire 1 0" i_val0 $end
 $var wire 1 1" i_val1 $end
 $var wire 1 2" o_val $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $upscope $end
 $scope module mux_bit11 $end
 $var wire 1 3" i_val0 $end
 $var wire 1 4" i_val1 $end
 $var wire 1 5" o_val $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $upscope $end
 $scope module mux_bit12 $end
 $var wire 1 6" i_val0 $end
 $var wire 1 7" i_val1 $end
 $var wire 1 8" o_val $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $upscope $end
 $scope module mux_bit13 $end
 $var wire 1 9" i_val0 $end
 $var wire 1 :" i_val1 $end
 $var wire 1 ;" o_val $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $upscope $end
 $scope module mux_bit14 $end
 $var wire 1 <" i_val0 $end
 $var wire 1 =" i_val1 $end
 $var wire 1 >" o_val $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $upscope $end
 $scope module mux_bit15 $end
 $var wire 1 ?" i_val0 $end
 $var wire 1 @" i_val1 $end
 $var wire 1 A" o_val $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $upscope $end
 $scope module mux_bit2 $end
 $var wire 1 B" i_val0 $end
 $var wire 1 C" i_val1 $end
 $var wire 1 D" o_val $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $upscope $end
 $scope module mux_bit3 $end
 $var wire 1 E" i_val0 $end
 $var wire 1 F" i_val1 $end
 $var wire 1 G" o_val $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $upscope $end
 $scope module mux_bit4 $end
 $var wire 1 H" i_val0 $end
 $var wire 1 I" i_val1 $end
 $var wire 1 J" o_val $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $upscope $end
 $scope module mux_bit5 $end
 $var wire 1 K" i_val0 $end
 $var wire 1 L" i_val1 $end
 $var wire 1 M" o_val $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $upscope $end
 $scope module mux_bit6 $end
 $var wire 1 N" i_val0 $end
 $var wire 1 O" i_val1 $end
 $var wire 1 P" o_val $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $upscope $end
 $scope module mux_bit7 $end
 $var wire 1 Q" i_val0 $end
 $var wire 1 R" i_val1 $end
 $var wire 1 S" o_val $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $upscope $end
 $scope module mux_bit8 $end
 $var wire 1 T" i_val0 $end
 $var wire 1 U" i_val1 $end
 $var wire 1 V" o_val $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $upscope $end
 $scope module mux_bit9 $end
 $var wire 1 W" i_val0 $end
 $var wire 1 X" i_val1 $end
 $var wire 1 Y" o_val $end
-$var wire 1 ( i_sel $end
+$var wire 1 % i_sel $end
 $upscope $end
 $upscope $end
 $scope module TInMux $end
@@ -388,16 +388,16 @@ $var wire 1 /# M $end
 $var wire 4 0# s [0:3] $end
 $var wire 16 1# b [0:15] $end
 $var wire 16 2# a [0:15] $end
-$var reg 1 ; co $end
+$var reg 1 9 co $end
 $var reg 16 3# g [0:15] $end
 $var reg 16 4# p [0:15] $end
 $var reg 16 5# y [0:15] $end
 $upscope $end
 $scope module carryFlag $end
 $var wire 1 ! i_clock $end
-$var wire 1 ; i_data $end
-$var wire 1 6 i_w $end
-$var reg 1 4 o_data $end
+$var wire 1 9 i_data $end
+$var wire 1 4 i_w $end
+$var reg 1 2 o_data $end
 $upscope $end
 $scope module flagMux $end
 $var wire 16 6# i_val0 [0:15] $end
@@ -946,7 +946,7 @@ $var wire 16 2& bus [0:15] $end
 $var wire 1 ! i_clock $end
 $var wire 16 3& i_data [0:15] $end
 $var wire 1 4& i_s $end
-$var wire 1 $ i_w $end
+$var wire 1 : i_w $end
 $var reg 16 5& o_data [0:15] $end
 $scope module m $end
 $var wire 1 4& i_sel $end
@@ -1183,109 +1183,109 @@ $scope module stack $end
 $var wire 16 L' bus [0:15] $end
 $var wire 16 M' i_addr [0:15] $end
 $var wire 1 ! i_clock $end
-$var wire 1 & i_w $end
-$var wire 1 ' i_s $end
+$var wire 1 # i_w $end
+$var wire 1 $ i_s $end
 $var reg 16 N' o_top [0:15] $end
 $scope module m $end
 $var wire 16 O' i_val0 [0:15] $end
 $var wire 16 P' i_val1 [0:15] $end
 $var wire 16 Q' o_val [0:15] $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $scope module mux_bit0 $end
 $var wire 1 R' i_val0 $end
 $var wire 1 S' i_val1 $end
 $var wire 1 T' o_val $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $upscope $end
 $scope module mux_bit1 $end
 $var wire 1 U' i_val0 $end
 $var wire 1 V' i_val1 $end
 $var wire 1 W' o_val $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $upscope $end
 $scope module mux_bit10 $end
 $var wire 1 X' i_val0 $end
 $var wire 1 Y' i_val1 $end
 $var wire 1 Z' o_val $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $upscope $end
 $scope module mux_bit11 $end
 $var wire 1 [' i_val0 $end
 $var wire 1 \' i_val1 $end
 $var wire 1 ]' o_val $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $upscope $end
 $scope module mux_bit12 $end
 $var wire 1 ^' i_val0 $end
 $var wire 1 _' i_val1 $end
 $var wire 1 `' o_val $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $upscope $end
 $scope module mux_bit13 $end
 $var wire 1 a' i_val0 $end
 $var wire 1 b' i_val1 $end
 $var wire 1 c' o_val $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $upscope $end
 $scope module mux_bit14 $end
 $var wire 1 d' i_val0 $end
 $var wire 1 e' i_val1 $end
 $var wire 1 f' o_val $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $upscope $end
 $scope module mux_bit15 $end
 $var wire 1 g' i_val0 $end
 $var wire 1 h' i_val1 $end
 $var wire 1 i' o_val $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $upscope $end
 $scope module mux_bit2 $end
 $var wire 1 j' i_val0 $end
 $var wire 1 k' i_val1 $end
 $var wire 1 l' o_val $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $upscope $end
 $scope module mux_bit3 $end
 $var wire 1 m' i_val0 $end
 $var wire 1 n' i_val1 $end
 $var wire 1 o' o_val $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $upscope $end
 $scope module mux_bit4 $end
 $var wire 1 p' i_val0 $end
 $var wire 1 q' i_val1 $end
 $var wire 1 r' o_val $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $upscope $end
 $scope module mux_bit5 $end
 $var wire 1 s' i_val0 $end
 $var wire 1 t' i_val1 $end
 $var wire 1 u' o_val $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $upscope $end
 $scope module mux_bit6 $end
 $var wire 1 v' i_val0 $end
 $var wire 1 w' i_val1 $end
 $var wire 1 x' o_val $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $upscope $end
 $scope module mux_bit7 $end
 $var wire 1 y' i_val0 $end
 $var wire 1 z' i_val1 $end
 $var wire 1 {' o_val $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $upscope $end
 $scope module mux_bit8 $end
 $var wire 1 |' i_val0 $end
 $var wire 1 }' i_val1 $end
 $var wire 1 ~' o_val $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $upscope $end
 $scope module mux_bit9 $end
 $var wire 1 !( i_val0 $end
 $var wire 1 "( i_val1 $end
 $var wire 1 #( o_val $end
-$var wire 1 ' i_sel $end
+$var wire 1 $ i_sel $end
 $upscope $end
 $upscope $end
 $upscope $end
@@ -1294,31 +1294,32 @@ $var wire 18 $( i_instruction [0:17] $end
 $var wire 1 > o_RSCtrl $end
 $var wire 1 = o_RWCtrl $end
 $var wire 1 < o_TIn $end
-$var wire 1 6 o_carryWCtrl $end
-$var wire 1 0 o_instrTypeCtrl $end
+$var wire 1 : o_TWCtrl $end
+$var wire 1 4 o_carryWCtrl $end
+$var wire 1 . o_instrTypeCtrl $end
 $var wire 6 %( o_jCtrl [0:5] $end
-$var wire 1 ( o_stkAddrSel $end
-$var wire 1 ' o_stkSCtrl $end
-$var wire 1 & o_stkWCtrl $end
+$var wire 1 % o_stkAddrSel $end
+$var wire 1 $ o_stkSCtrl $end
+$var wire 1 # o_stkWCtrl $end
 $var wire 3 &( o_spCtrl [0:2] $end
 $var wire 2 '( o_jSelCtrl [0:1] $end
 $var wire 5 (( o_instrOP [0:4] $end
 $upscope $end
 $scope module the_jumpassist $end
-$var wire 1 4 i_carry $end
+$var wire 1 2 i_carry $end
 $var wire 16 )( i_jCondVal [0:15] $end
 $var wire 6 *( i_jCtrl [0:5] $end
 $var wire 3 +( w_SZC [0:2] $end
-$var wire 1 5 o_cond $end
+$var wire 1 3 o_cond $end
 $scope module jMux $end
 $var wire 3 ,( i_sel [0:2] $end
 $var wire 8 -( i_val [0:7] $end
 $var wire 1 .( w_1 $end
 $var wire 1 /( w_0 $end
-$var wire 1 5 o_val $end
+$var wire 1 3 o_val $end
 $scope module mux2_2 $end
 $var wire 1 0( i_sel $end
-$var wire 1 5 o_val $end
+$var wire 1 3 o_val $end
 $var wire 1 .( i_val1 $end
 $var wire 1 /( i_val0 $end
 $upscope $end
@@ -1466,7 +1467,7 @@ bx Q'
 bz P'
 bx O'
 bx N'
-bz M'
+b0 M'
 bx L'
 zK'
 0J'
@@ -1974,7 +1975,7 @@ x+"
 0*"
 b0 )"
 bx ("
-bx '"
+b0 '"
 0&"
 0%"
 0$"
@@ -2048,31 +2049,31 @@ bx ?
 1>
 0=
 1<
-x;
-b0 :
-bx 9
-bx 8
+bx ;
+1:
+x9
+b0 8
 bx 7
-06
-x5
-x4
-bx 3
-b0 2
-b0 1
-00
-bx /
-b111000 .
-b0 -
-bx ,
-b111000 +
-b0 *
-b0 )
-0(
-0'
-0&
-bz %
-z$
-bx #
+bx 6
+bx 5
+04
+x3
+x2
+bx 1
+b0 0
+b0 /
+0.
+bx -
+b111000 ,
+b0 +
+bx *
+b111000 )
+b0 (
+b0 '
+b0 &
+0%
+0$
+0#
 bx "
 0!
 $end
@@ -2095,6 +2096,7 @@ xE'
 xH'
 xK'
 x/(
+x:
 xu&
 x3(
 x>(
@@ -2113,6 +2115,9 @@ x8"
 x5"
 x2"
 x/"
+bx &
+bx '"
+bx M'
 x,"
 xl&
 x>
@@ -2125,15 +2130,15 @@ xB(
 xD(
 xE(
 x<
-x(
-x&
+x%
+x#
 xp&
-x0
+x.
 x&"
 x#"
 x~
 x{
-bx :
+bx 8
 bx t
 xx
 xH$
@@ -2141,22 +2146,22 @@ xr#
 x>#
 b11xx 2(
 bx =(
-x'
-bx )
+x$
+bx '
 bx o&
 bx &(
 x=
-x6
+x4
 x$"
 x!"
 x|
 xy
 xv
-bx -
+bx +
 bx =#
 bx '(
 b11xxxxxx -(
-bx .
+bx ,
 bx %(
 bx *(
 x]"
@@ -2191,17 +2196,17 @@ x3%
 x6%
 x9%
 x<%
-bx 1
+bx /
 bx u
 bx ((
 bx Z"
 b1111111111111111 m&
 b1111111111111111 r&
 b1111111111111111 t&
-bx +
+bx )
 bx j&
 bx $(
-bx 2
+bx 0
 bx "%
 bx $%
 bx X%

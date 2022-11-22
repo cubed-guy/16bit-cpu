@@ -1,3 +1,4 @@
 *.sublime-*
 ./impl/out
-./impl/a.out
+**/a.out
+*.vcd
