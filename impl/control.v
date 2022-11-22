@@ -41,7 +41,7 @@ assign o_spCtrl[0] = o_stkAddrSel & o_TIn;
 assign o_spCtrl[1] = i_instruction[0] & o_TIn;
 assign o_spCtrl[2] = i_instruction[1] & o_TIn;
 
-assign o_RWCtrl = i_instruction[5] & o_TIn;
+assign o_RWCtrl = i_instruction[6] & o_TIn;
 assign o_RSCtrl = (~i_instruction[3]) & (~i_instruction[4]) & o_TIn;
 
 assign o_carryWCtrl = (i_instruction[2]) & o_TIn;
