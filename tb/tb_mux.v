@@ -18,6 +18,10 @@ initial begin
 	#5 val0 <= 16'b100010101; val1 <= 16'b011101010; sel <= 1'b1;
 	#5 val0 <= 16'b111111111; val1 <= 16'b000010011; sel <= 1'b0;
 	#5 val0 <= 16'b111111111; val1 <= 16'b000010011; sel <= 1'b1;
+	#5 val0 <= 16'b111111111; val1 <= 16'bzzzzzzzzz; sel <= 1'b0;
+	#5 val0 <= 16'b111111111; val1 <= 16'bzzzzzzzzz; sel <= 1'b1;
+	#5 val0 <= 16'b111111111; val1 <= 16'bxxxxxxxxx; sel <= 1'b0;
+	#5 val0 <= 16'b111111111; val1 <= 16'bxxxxxxxxx; sel <= 1'b1;
 end
 
 endmodule
