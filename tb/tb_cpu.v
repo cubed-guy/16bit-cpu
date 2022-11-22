@@ -8,6 +8,8 @@ initial begin
     clock = 1'b0;
     c.sp.top.o_data = 16'b0;
     c.ip.o_data     = 16'b0;
+    c.registerR.o_data = 16'b0;
+    c.registerT.o_data = 16'b0;
 end
 initial begin $dumpfile("cpu.vcd"); $dumpvars(0,tb); end
 initial begin
