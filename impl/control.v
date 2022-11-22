@@ -6,6 +6,7 @@ module controlunit (
     o_spCtrl,
     o_RWCtrl,
     o_RSCtrl,
+    o_TWCtrl,
     o_TIn,
     o_carryWCtrl,
     o_instrTypeCtrl,
@@ -15,30 +16,32 @@ module controlunit (
 );
 
 input [0:17] i_instruction;
-output   o_stkAddrSel;
-output   o_stkWCtrl;
-output   o_stkSCtrl;
+output  o_stkAddrSel;
+output  o_stkWCtrl;
+output  o_stkSCtrl;
 output [0:2]  o_spCtrl;
 output  o_RWCtrl;
-output   o_RSCtrl;
-output   o_TIn;
-output   o_carryWCtrl;
+output  o_RSCtrl;
+output  o_TWCtrl;
+output  o_TIn;
+output  o_carryWCtrl;
 output [0:4] o_instrOP;
 output o_instrTypeCtrl;
 output [0:1] o_jSelCtrl;
 output [0:5] o_jCtrl;
 
 assign o_TIn = (~i_instruction[0]) & (~i_instruction[1]);
+assign o_TWCtrl = o_TIn | ;
 
 assign o_stkAddrSel = (~i_instruction[3]) & (i_instruction[4]) & o_TIn;
-assign o_stkWCtrl = i_instruction[3] & i_instruction[7] & o_TIn;
-assign o_stkSCtrl = i_instruction[3] & o_TIn;
+assign o_stkWCtrl = i_instruction[2] & i_instruction[7] & o_TIn;
+assign o_stkSCtrl = i_instruction[2] & o_TIn;
 
 assign o_spCtrl[0] = o_stkAddrSel & o_TIn;
 assign o_spCtrl[1] = i_instruction[0] & o_TIn;
 assign o_spCtrl[2] = i_instruction[1] & o_TIn;
 
-assign o_RWCtrl = i_instruction[6]& o_TIn;
+assign o_RWCtrl = i_instruction[5] & o_TIn;
 assign o_RSCtrl = (~i_instruction[3]) & (~i_instruction[4]) & o_TIn;
 
 assign o_carryWCtrl = (i_instruction[2]) & o_TIn;

@@ -1,13 +1,14 @@
-module incrementer(i_in, i_dir, o_out);
+module incrementer(i_clock, i_in, i_dir, o_out);
+input i_clock;
 input i_dir;
 input [0:15] i_in;
 output reg [0:15] o_out;
-always @(*) begin
+always @(posedge i_clock) begin
     if (i_dir) begin
-        assign o_out = i_in + 1;
+        o_out <= i_in + 1;
     end
     else begin
-        assign o_out = i_in - 1;
+        o_out <= i_in - 1;
     end
 end
 endmodule
