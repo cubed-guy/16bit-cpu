@@ -66,7 +66,7 @@ always @(posedge i_clock) begin
     o_top <= memory[i_addr];
 end
 
-wordmux m(.i_sel(i_s), .i_val0(memory[i_addr]), .i_val1(16'bz), .o_val(bus));
+wordmux m(.i_sel(i_s), .i_val0(16'bz), .i_val1(memory[i_addr]), .o_val(bus));
 
 endmodule
 
