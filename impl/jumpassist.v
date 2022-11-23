@@ -28,5 +28,5 @@ assign w_SZC[1] = ~(
 
 assign w_SZC[2] = i_carry;
 
-mux8 jMux(.i_sel(w_SZC), .i_val({2'b00, i_jCtrl}), .o_val(o_cond));
+mux8 jMux(.i_sel(w_SZC), .i_val({i_jCtrl, 2'b00}), .o_val(o_cond));
 endmodule

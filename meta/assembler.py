@@ -30,7 +30,7 @@ for line_no, line in enumerate(infile):
 	label, _, stmt = line.rpartition(':')  # label support
 
 	if label: labels[label] = inst_no
-	if not stmt: continue
+	if not stmt.strip(): continue
 	inst_no += 1
 
 print('Completed pass 1')
@@ -58,7 +58,7 @@ for line_no, line in enumerate(infile):
 		inst_no += 1
 		continue
 
-	inst, _, jump = stmt.partition(',')
+	inst, _, jump = stmt.partition('^')
 	split = inst.split()
 
 	if   split[0].endswith('+'): split[0] = split[0][:-1]; sp = 0b01
@@ -87,8 +87,9 @@ for line_no, line in enumerate(infile):
 	if not jump: jval = 0; jsrc = 0
 	else:
 		split = jump.split()
-		jsrc = jsources[split[1]]
-		if split[1].startswith('0x'): jval = int(split[1], 16)
+		jsrc = jsources[split[0]]
+		if   split[1].startswith('0x'): jval = int(split[1], 16)
+		elif split[1].startswith('0b'): jval = int(split[1], 2)
 		else: jval = int(split[1])
 		jval &= 63
 
