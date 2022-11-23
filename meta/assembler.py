@@ -45,7 +45,7 @@ for line_no, line in enumerate(infile):
 	line, *_ = line.partition(';')  # comment support
 	label, _, stmt = line.rpartition(':')  # label support
 
-	if not stmt: continue
+	if not stmt.strip(): continue
 
 	split = stmt.split()
 
@@ -54,7 +54,7 @@ for line_no, line in enumerate(infile):
 		elif split[1].isidentifier(): val = labels[split[1]]
 		else: val = int(split[1])
 		val &= 65535  # DT should not leak into MV and OP
-		output(f"assign program[{inst_no}] = 18'b{val:018b}; //", line)
+		output(f"assign program[{inst_no}] = 18'b{val:018b}; //", line.strip())
 		inst_no += 1
 		continue
 
@@ -92,7 +92,7 @@ for line_no, line in enumerate(infile):
 		else: jval = int(split[1])
 		jval &= 63
 
-	output(f"assign program[{inst_no}] = 18'b{sp:02b}{itype}{val:05b}{idx}{jsrc:03b}{jval:06b}; //", line)
+	output(f"assign program[{inst_no}] = 18'b{sp:02b}{itype}{val:05b}{idx}{jsrc:03b}{jval:06b}; //", line.strip())
 
 	inst_no += 1
 

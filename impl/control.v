@@ -30,7 +30,7 @@ output o_instrTypeCtrl;
 output [0:1] o_jSelCtrl;
 output [0:5] o_jCtrl;
 
-assign o_notD = (i_instruction[0]) & (i_instruction[1]);
+assign o_notD = (i_instruction[0]) | (i_instruction[1]);
 assign o_TWCtrl = (~o_notD) | ((~i_instruction[2]) & (i_instruction[7]));
 
 assign o_stkAddrSel = (i_instruction[8]) & o_notD;

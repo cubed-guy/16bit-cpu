@@ -14,7 +14,7 @@ initial begin
 end
 initial begin $dumpfile("cpu.vcd"); $dumpvars(0,tb); end
 initial begin
-    $monitor("%d : %h %h %h %h %h", $time, c.w_aluT, c.stack.memory[0] , c.stack.memory[1], c.stack.memory[2], c.stack.memory[3]);
+    $monitor("%t : (T:%h) (Stack[0:4]: %h %h %h %h)", $time, c.w_aluT, c.stack.memory[0] , c.stack.memory[1], c.stack.memory[2], c.stack.memory[3]);
     // $monitor("%d : %h %h", $time, c.i_clock, clock);
     #240 $finish;
 end
